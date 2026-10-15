@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeatherNow | Live Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="sun">☀</span><div><strong>WeatherNow</strong><small>Live weather at a glance</small></div></div>
+      <span class="live"><i></i> LIVE DATA</span>
+    </header>
+    <section class="hero">
+      <p class="eyebrow">YOUR CITY, YOUR FORECAST</p>
+      <h1>Weather, made simple.</h1>
+      <p class="intro">Check current conditions and plan your day with live weather data.</p>
+      <form id="searchForm" class="search">
+        <label class="sr-only" for="cityInput">City name</label>
+        <input id="cityInput" type="text" placeholder="Enter a city (e.g. Hyderabad)" value="Hyderabad" required />
+        <button id="searchButton" type="submit">Search weather ↗</button>
+      </form>
+      <p id="status" class="status" role="status">Ready to check the weather.</p>
+    </section>
+    <section id="weatherPanel" class="weather-panel" aria-live="polite">
+      <div class="weather-heading"><div><p class="eyebrow">CURRENT WEATHER</p><h2 id="place">Hyderabad, India</h2><p id="updated">Fetching live conditions…</p></div><div id="weatherIcon" class="weather-icon">🌤️</div></div>
+      <div class="temperature"><span id="temperature">--°</span><div><strong id="condition">Loading…</strong><p>Feels like <span id="feels">--</span>°C</p></div></div>
+      <div class="metrics">
+        <article><span>💧</span><small>Humidity</small><strong id="humidity">--%</strong></article>
+        <article><span>💨</span><small>Wind speed</small><strong id="wind">-- km/h</strong></article>
+        <article><span>🌡️</span><small>Temperature range</small><strong id="range">--° / --°C</strong></article>
+      </div>
+      <div class="forecast-title"><h3>Next 5 days</h3><span>Daily outlook</span></div>
+      <div id="forecast" class="forecast"><p class="muted">Loading forecast…</p></div>
+    </section>
+    <footer>Built by Navya · Weather data from Open-Meteo · No API key required</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
